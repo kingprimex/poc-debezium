@@ -52,6 +52,8 @@ services:
       - HEAP_OPTS=-Xms256M -Xmx256M
       - ADVERTISED_HOST_NAME=debezium-connect
  #     - ADVERTISED_HOST_NAME=$(echo $DOCKER_HOST | cut -f3  -d'/' | cut -f1 -d':')
+    volumes:
+      - ./extra_libs/debezium-connector-elasticsearch:/kafka/connect/debezium-connector-elasticsearch
     depends_on:
       - zookeeper
       - kafka  
