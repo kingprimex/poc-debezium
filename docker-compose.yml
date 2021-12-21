@@ -54,6 +54,7 @@ services:
  #     - ADVERTISED_HOST_NAME=$(echo $DOCKER_HOST | cut -f3  -d'/' | cut -f1 -d':')
     volumes:
       - ./extra_libs/debezium-connector-elasticsearch:/kafka/connect/debezium-connector-elasticsearch
+      - ./extra_libs/debezium-connector-jdbc:/kafka/connect/debezium-connector-jdbc
     depends_on:
       - zookeeper
       - kafka  
